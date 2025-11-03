@@ -5,3 +5,6 @@ output.txt
 .vscode/
 .DS_Store
 .cache
+# Spotify auth tokens
+.cache*
+*_token.json
