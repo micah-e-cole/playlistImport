@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Spotify → Qobuz Playlist Links</title>
+    <style>
+        body { font-family: Arial, sans-serif; background-color: #121212; color: #e0e0e0; }
+        h1 { text-align: center; color: #1db954; }
+        table { width: 90%; margin: 20px auto; border-collapse: collapse; }
+        th, td { padding: 10px; border-bottom: 1px solid #333; text-align: left; }
+        a { color: #1db954; text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        tr:nth-child(even) { background-color: #1e1e1e; }
+    </style>
+</head>
+<body>
+    <h1>Spotify → Qobuz Playlist Links</h1>
+    <table>
+        <tr><th>Playlist</th><th>Track</th><th>Artist</th><th>Qobuz Search</th></tr>
+        {% for t in tracks %}
+        <tr>
+            <td>{{ t.playlist }}</td>
+            <td>{{ t.track }}</td>
+            <td>{{ t.artist }}</td>
+            <td><a href="{{ t.qobuz_link }}" target="_blank">Search on Qobuz</a></td>
+        </tr>
+        {% endfor %}
+    </table>
+</body>
+</html>
